@@ -1,14 +1,6 @@
-from csv_translator import csv_convert
+from csv_translator import setup as csv_setup
 import pandas as pd
 
 
 data_frame = pd.read_csv('rusText.csv', sep=';')
-data_frame["number"] = data_frame["Num"]
-data_frame["review"] = data_frame["Review"]
-data_frame["review_type"] = data_frame["review_type"]
-
-df = data_frame[["number", "review", "review_type"]]
-
-list = csv_convert.make_list_from_data_frame(df)
-
-print(list)
+csv_setup.translate_data_frame_and_make_new_csv("kaz_data_set", "rusText.csv")
