@@ -10,13 +10,13 @@ def translate_data_frame_and_make_new_csv(new_csv_name, base_csv_name):
     df = data_frame[["number", "review", "review_type"]]
 
     list = csv_convert.make_list_from_data_frame(df)
-    print('--- list: ' + str(list))
+    # print('--- list: ' + str(list))
 
     review_list = csv_convert.get_review_list_from_data_list(list)
-    print('--- review list: ' + str(review_list))
+    # print('--- review list: ' + str(review_list))
 
     translated_review_list = translator.list_translator(review_list)
-    print('--- translated review list: ' + str(translated_review_list))
+    # print('--- translated review list: ' + str(translated_review_list))
 
     translated_list = csv_convert.create_new_data_list_from_translated_list(translated_review_list, list)
 
